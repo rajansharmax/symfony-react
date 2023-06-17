@@ -16,7 +16,7 @@ Encore
 
   .enableReactPreset()
 
-  .addEntry("main", "./assets/main.tsx")
+  .addEntry("index", "./assets/index.tsx")
   .addStyleEntry('styles', './assets/css/app.scss')
 
 

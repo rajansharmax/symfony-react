@@ -19,8 +19,8 @@ class HomeController extends AbstractController
 
    
 
-    #[Route('/home', name: 'home')]
-    public function home(EntityManagerInterface $manager, UserPasswordHasherInterface $passwordHasher): Response
+    #[Route('/add-demo-user', name: 'add_demo_user')]
+    public function add_demo_user(EntityManagerInterface $manager, UserPasswordHasherInterface $passwordHasher): Response
     {
         $user = new User();
         $user->setUsername('admin2');
@@ -39,7 +39,13 @@ class HomeController extends AbstractController
         return $this->render('Good');
     }
 
-    #[Route('/', name: 'app_home')]
+    #[Route('/',name:'app_home')]
+    public function home(): Response
+    {
+       return $this->HomePage();
+    }
+
+    #[Route('/login', name: 'login')]
     public function index(): Response
     {
         return $this->render('home/index.html.twig', [
@@ -50,6 +56,14 @@ class HomeController extends AbstractController
 
     #[Route('/products', name: 'products')]
     public function products(): Response
+    {
+        return $this->render('home/index.html.twig', [
+            'controller_name' => 'HomeController',
+            'appName' => 'React'
+        ]);
+    }
+
+    public function HomePage(): Response
     {
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
