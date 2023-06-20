@@ -4,6 +4,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import ProductListPage from "./pages/ProductListPage";
 import ProductDetailPage from "./pages/ProducDetailPage";
 import AuthContext from "./store/AuthContext";
+import Home from "./pages/Home"
 
 const App = () => {
 	const Auth = useContext(AuthContext);
@@ -21,7 +22,10 @@ const App = () => {
 					</React.Fragment>
 				) : null}
 
-				<Route path="/" element={<LoginPage />} />
+				<Route path="/login" element={<LoginPage />} />
+				<Route path="/" element={<Home />} />
+				<Route path="/register" element={<LoginPage />} />
+
 				<Route path="*" element={<Navigate to="/" replace />} />
 			</Routes>
 		</React.Fragment>

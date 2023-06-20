@@ -42,6 +42,16 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
     public function index(): Response
     {
+        // return $this->redirectToRoute('login');
+        return $this->render('home/index.html.twig', [
+            'controller_name' => 'HomeController',
+            'appName' => 'React'
+        ]);
+    }
+
+    #[Route('/login', name: 'login')]
+    public function login(): Response
+    {
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'appName' => 'React'
