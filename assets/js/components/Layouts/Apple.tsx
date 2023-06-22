@@ -10,7 +10,7 @@ const Apple = (props:LayoutProps) => {
     return (
         <React.Fragment>
             <Header />
-            <Sidebar />
+            {/* <Sidebar /> */}
                 {/* props = yeild */}
                 <main className="flex-shrink-0">{props.children}</main>
             <Footer />

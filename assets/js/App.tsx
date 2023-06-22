@@ -5,6 +5,8 @@ import ProductListPage from "./pages/ProductListPage";
 import ProductDetailPage from "./pages/ProducDetailPage";
 import AuthContext from "./store/AuthContext";
 import Home from "./pages/Home"
+import AdminLogin from "./pages/Admin/Login";
+import Dashboard from './pages/Admin/Dashboard'
 
 const App = () => {
 	const Auth = useContext(AuthContext);
@@ -19,10 +21,12 @@ const App = () => {
 							path="/products/:productId"
 							element={<ProductDetailPage />}
 						/>
+						<Route path="/admin/dashboard" element={<Dashboard />} />
 					</React.Fragment>
 				) : null}
 
 				<Route path="/login" element={<LoginPage />} />
+				<Route path="/admin/login" element={<AdminLogin />} />
 				<Route path="/" element={<Home />} />
 				<Route path="/register" element={<LoginPage />} />
 

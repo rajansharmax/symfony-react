@@ -66,4 +66,13 @@ class HomeController extends AbstractController
             'appName' => 'React'
         ]);
     }
+
+    #[Route('admin/login', name: 'adminLogin')]
+    public function AdminLogin(): Response
+    {
+        return $this->render('home/index.html.twig', [
+            'controller_name' => 'HomeController',
+            'appName' => 'React'
+        ]);
+    }
 }
