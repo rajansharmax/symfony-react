@@ -20,7 +20,6 @@ const Login = () =>{
 
     const getloginApi = async () => {
       setErrorLogin(null);
-      console.log('ee');
       console.log(loginRef, passwordRef);
 
       try{
