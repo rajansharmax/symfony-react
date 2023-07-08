@@ -79,8 +79,21 @@
 
   </head>    
     <body>
-        <div id="app"></div>
-        {% block body %}{% endblock %}
+        <!-- Layout wrapper -->
+        <div class="layout-wrapper layout-content-navbar">
+            <div class="layout-container">
+                <!-- Menu -->
+
+                <div id="app"></div>
+                {% block body %}{% endblock %}
+
+            </div>
+            <!-- Overlay -->
+            <div class="layout-overlay layout-menu-toggle"></div>
+            <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+            <div class="drag-target"></div>
+        </div>
+        <!-- Layout wrapper -->
     </body>
     {# {% include 'Layouts/Partials/scripts.html.twig' %} #}
 
