@@ -10,16 +10,21 @@ interface LayoutProps {
 const Apple = (props:LayoutProps) => {
     return (
         <React.Fragment>
-            <Header />
+            {/* <Header /> */}
             {/* <!-- Layout container --> */}
                 <div className="layout-page">
                     {/* <!-- Navbar -->*/}
                         <Sidebar />
                         <Navbar />
                         {/* props = yeild */}
-                        <main className="">{props.children}</main>
+                        {/* <!-- Content wrapper --> */}
+                        <div className="content-wrapper">
+                            {/* <!-- Content -->*/}
+                            {props.children}
+                            <Footer />
+                            <div className="content-backdrop fade"></div>
+                        </div>
                 </div>
-            <Footer />
         </React.Fragment>
     );
 };
