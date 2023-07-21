@@ -56,8 +56,8 @@ const Login = () =>{
       if (Auth.isLoggedIn) {
         navigate("/admin/dashboard");
       }
-    }, [Auth.isLoggedIn, navigate]);
-
+    }, [Auth.isLoggedIn, navigate]); 
+    
     return (
         <div className="container-xxl">
           <div className="authentication-wrapper authentication-basic container-p-y">
