@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../../store/AuthContext";
 
 const Navbar = () => {
 
   const Auth = useContext(AuthContext);
+  // TODO FIX DARK MODE
+  const [isLightStyle, setIsLightStyle] = useState(true);
   
   return (
     <nav
@@ -94,10 +96,7 @@ const Navbar = () => {
 
           {/* <!-- Style Switcher --> */}
           <li className="nav-item me-2 me-xl-0">
-            <a
-              className="nav-link style-switcher-toggle hide-arrow"
-              href="#;"
-            >
+            <a className="nav-link style-switcher-toggle hide-arrow" href="#">
               <i className="ti ti-md"></i>
             </a>
           </li>
