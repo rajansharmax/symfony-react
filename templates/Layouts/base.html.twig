@@ -84,8 +84,7 @@
     <body>
         <!-- Layout wrapper -->
         {% block body %}{% endblock %}
-        <!-- Page JS -->
-        <script src="{{asset('assets/js/dashboards-analytics.js')}}"></script>
+
         {# {% include 'Layouts/Partials/scripts.html.twig' %} #}
 
         <!-- Core JS -->
@@ -114,5 +113,8 @@
 
         <!-- Main JS -->
         <script src="{{asset('assets/js/main.js')}}"></script>
+        <!-- Page JS -->
+        <script src="{{asset('assets/js/dashboards-analytics.js')}}"></script>
+
     </body>
 </html>
