@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import AuthContext from "../../../store/AuthContext";
 
 const Navbar = () => {
+
+  const Auth = useContext(AuthContext);
+  
   return (
     <nav
       className="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
@@ -656,8 +660,8 @@ const Navbar = () => {
               <li>
                 <a
                   className="dropdown-item"
-                  href="auth-login-cover.html"
-                  target="_blank"
+                  href="#"
+                  onClick={Auth.logout}
                 >
                   <i className="ti ti-logout me-2 ti-sm"></i>
                   <span className="align-middle">Log Out</span>
