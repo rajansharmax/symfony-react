@@ -11,19 +11,30 @@ const Apple = (props:LayoutProps) => {
     return (
         <React.Fragment>
             {/* <Header /> */}
-            {/* <!-- Layout container --> */}
-                <div className="layout-page">
-                    {/* <!-- Navbar -->*/}
+                {/* <!-- Layout wrapper --> */}
+                <div className="layout-wrapper layout-content-navbar">
+                    <div className="layout-container">
+                        {/* <!-- Menu --> */}
+                        {/* <!-- Layout container --> */}
                         <Sidebar />
-                        <Navbar />
-                        {/* props = yeild */}
-                        {/* <!-- Content wrapper --> */}
-                        <div className="content-wrapper">
-                            {/* <!-- Content -->*/}
-                            {props.children}
-                            <Footer />
-                            <div className="content-backdrop fade"></div>
+                        <div className="layout-page">
+                            {/* <!-- Navbar -->*/}
+                                <Navbar />
+                                {/* props = yeild */}
+                                {/* <!-- Content wrapper --> */}
+                                <div className="content-wrapper">
+                                    {/* <!-- Content -->*/}
+                                    {props.children}
+                                    <Footer />
+                                    <div className="content-backdrop fade"></div>
+                                </div>
                         </div>
+                            
+                    </div>
+                    {/* <!-- Overlay --> */}
+                    <div className="layout-overlay layout-menu-toggle"></div>
+                    {/* <!-- Drag Target Area To SlideIn Menu On Small Screens --> */}
+                    <div className="drag-target"></div>
                 </div>
         </React.Fragment>
     );

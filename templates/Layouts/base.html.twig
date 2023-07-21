@@ -83,22 +83,7 @@
   </head>    
     <body>
         <!-- Layout wrapper -->
-        <div class="layout-wrapper layout-content-navbar" id="app">
-            <div class="layout-container">
-                <!-- Menu -->
-
-                {# <div id="app"></div> #}
-                {% block body %}{% endblock %}
-
-            </div>
-            <!-- Overlay -->
-            <div class="layout-overlay layout-menu-toggle"></div>
-            <!-- Drag Target Area To SlideIn Menu On Small Screens -->
-            <div class="drag-target"></div>
-        </div>
-        <!-- Layout wrapper -->
-
-
+        {% block body %}{% endblock %}
         <!-- Page JS -->
         <script src="{{asset('assets/js/dashboards-analytics.js')}}"></script>
         {# {% include 'Layouts/Partials/scripts.html.twig' %} #}
