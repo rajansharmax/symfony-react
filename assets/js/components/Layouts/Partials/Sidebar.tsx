@@ -69,7 +69,9 @@ const Sidebar: React.FC = () => {
               />
             </svg>
           </span>
-          <span className="app-brand-text demo menu-text fw-bold">Vuexy</span>
+          <span className="app-brand-text demo menu-text fw-bold">
+            YardSignPlus
+          </span>
         </a>
         <Link
           to="#"
@@ -92,7 +94,7 @@ const Sidebar: React.FC = () => {
             key={menuItem.id}
             className={`menu-item 
             ${menuClasses(menuItem.id)} 
-            ${isMenuItemActive(`/${menuItem.id}`) ? "active" : ""} 
+            ${isMenuItemActive(`/${menuItem.url}`) ? "active" : ""} 
             ${isItemCollapsed(menuItem.id) ? "open" : ""}`}
             onClick={() => toggleCollapse(menuItem.id)}
           >
@@ -107,7 +109,7 @@ const Sidebar: React.FC = () => {
               {menuItem.subItems.map((subItem) => (
                 <li key={subItem.id} className="menu-item">
                   <Link
-                    to={`admin/${menuItem.id}/${subItem.id}`}
+                    to={`/admin/${menuItem.url}/${subItem.url}`}
                     className="menu-link"
                   >
                     <div>{subItem.label}</div>
