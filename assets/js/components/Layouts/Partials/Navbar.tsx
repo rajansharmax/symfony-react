@@ -28,7 +28,7 @@ const Navbar = () => {
           <div className="nav-item navbar-search-wrapper mb-0">
             <a
               className="nav-item nav-link search-toggler d-flex align-items-center px-0"
-              href="#;"
+              href="#"
             >
               <i className="ti ti-search ti-md me-2"></i>
               <span className="d-none d-md-inline-block text-muted">
@@ -44,7 +44,7 @@ const Navbar = () => {
           <li className="nav-item dropdown-language dropdown me-2 me-xl-0">
             <a
               className="nav-link dropdown-toggle hide-arrow"
-              href="#;"
+              href="#"
               data-bs-toggle="dropdown"
             >
               <i className="fi fi-us fis rounded-circle me-1 fs-3"></i>
@@ -53,7 +53,7 @@ const Navbar = () => {
               <li>
                 <a
                   className="dropdown-item"
-                  href="#;"
+                  href="#"
                   data-language="en"
                 >
                   <i className="fi fi-us fis rounded-circle me-1 fs-3"></i>
@@ -63,7 +63,7 @@ const Navbar = () => {
               <li>
                 <a
                   className="dropdown-item"
-                  href="#;"
+                  href="#"
                   data-language="fr"
                 >
                   <i className="fi fi-fr fis rounded-circle me-1 fs-3"></i>
@@ -73,7 +73,7 @@ const Navbar = () => {
               <li>
                 <a
                   className="dropdown-item"
-                  href="#;"
+                  href="#"
                   data-language="de"
                 >
                   <i className="fi fi-de fis rounded-circle me-1 fs-3"></i>
@@ -83,7 +83,7 @@ const Navbar = () => {
               <li>
                 <a
                   className="dropdown-item"
-                  href="#;"
+                  href="#"
                   data-language="pt"
                 >
                   <i className="fi fi-pt fis rounded-circle me-1 fs-3"></i>
@@ -106,7 +106,7 @@ const Navbar = () => {
           <li className="nav-item dropdown-shortcuts navbar-dropdown dropdown me-2 me-xl-0">
             <a
               className="nav-link dropdown-toggle hide-arrow"
-              href="#;"
+              href="#"
               data-bs-toggle="dropdown"
               data-bs-auto-close="outside"
               aria-expanded="false"
@@ -224,7 +224,7 @@ const Navbar = () => {
           <li className="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-1">
             <a
               className="nav-link dropdown-toggle hide-arrow"
-              href="#;"
+              href="#"
               data-bs-toggle="dropdown"
               data-bs-auto-close="outside"
               aria-expanded="false"
@@ -549,7 +549,7 @@ const Navbar = () => {
               </li>
               <li className="dropdown-menu-footer border-top">
                 <a
-                  href="#;"
+                  href="#"
                   className="dropdown-item d-flex justify-content-center text-primary p-2 h-px-40 mb-1 align-items-center"
                 >
                   View all notifications
@@ -563,7 +563,7 @@ const Navbar = () => {
           <li className="nav-item navbar-dropdown dropdown-user dropdown">
             <a
               className="nav-link dropdown-toggle hide-arrow"
-              href="#;"
+              href="#"
               data-bs-toggle="dropdown"
             >
               <div className="avatar avatar-online">
