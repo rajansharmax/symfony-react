@@ -4,9 +4,7 @@ import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import menuItems from "./menu/MenuItem";
 
 const Sidebar: React.FC = () => {
-  const [collapsedItems, setCollapsedItems] = useState<{
-    [key: string]: boolean;
-  }>({});
+  const [collapsedItems, setCollapsedItems] = useState<{[key: string]: boolean;}>({});
 
   const toggleCollapse = (itemId: string) => {
     setCollapsedItems((prevState) => ({
