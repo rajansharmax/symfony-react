@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import menuItems from "./menu/MenuItem";
 
 const Sidebar: React.FC = () => {
+  const location = useLocation();
   const [collapsedItems, setCollapsedItems] = useState<{[key: string]: boolean;}>({});
 
   const toggleCollapse = (itemId: string) => {
@@ -19,6 +20,10 @@ const Sidebar: React.FC = () => {
     const isItemCollapsing = collapsedItems[itemId] && !isItemCollapsed(itemId);
     return `menu-item ${isItemCollapsing ? "menu-item-animating menu-item-closing" : ""
       }`;
+  };
+
+  const isMenuItemActive = (to: string) => {
+    return location.pathname.includes(to);
   };
 
   return (
@@ -85,8 +90,10 @@ const Sidebar: React.FC = () => {
         {menuItems.map((menuItem) => (
           <li
             key={menuItem.id}
-            className={`menu-item ${menuClasses(menuItem.id)} active ${isItemCollapsed(menuItem.id) ? "open" : ""
-              }`}
+            className={`menu-item 
+            ${menuClasses(menuItem.id)} 
+            ${isMenuItemActive(`/${menuItem.id}`) ? "active" : ""} 
+            ${isItemCollapsed(menuItem.id) ? "open" : ""}`}
             onClick={() => toggleCollapse(menuItem.id)}
           >
             <Link to="#" className="menu-link menu-toggle">
