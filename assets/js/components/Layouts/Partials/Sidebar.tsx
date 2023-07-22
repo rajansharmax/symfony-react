@@ -107,7 +107,7 @@ const Sidebar: React.FC = () => {
               {menuItem.subItems.map((subItem) => (
                 <li key={subItem.id} className="menu-item">
                   <Link
-                    to={`/${menuItem.id}/${subItem.id}`}
+                    to={`admin/${menuItem.id}/${subItem.id}`}
                     className="menu-link"
                   >
                     <div>{subItem.label}</div>
