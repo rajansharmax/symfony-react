@@ -1,31 +1,24 @@
 import React from "react";
+import { Heart } from "react-feather";
 
 const Footer = () => {
 	return (
 		// <!-- Footer -->
 		<footer className="content-footer footer bg-footer-theme">
 			<div className="container-xxl">
-				<div
-					className="footer-container d-flex align-items-center justify-content-between py-2 flex-md-row flex-column"
-				>
-					<div>
-						©
-						<script>
-							document.write(new Date().getFullYear());
-						</script>
-						, made with ❤️ by <a href="#" target="_blank" className="fw-semibold">YardSignPlus</a>
-					</div>
-					<div>
-						<a href="#" className="footer-link me-4" target="_blank">License</a>
-						<a href="#" target="_blank" className="footer-link me-4">More Themes</a>
-
-						<a href="#"
-							target="_blank"
-							className="footer-link me-4">Documentation</a>
-
-						<a href="#" target="_blank" className="footer-link d-none d-sm-inline-block">Support</a>
-					</div>
-				</div>
+				<p className='clearfix mb-0'>
+					<span className='float-md-start d-block d-md-inline-block mt-25'>
+						COPYRIGHT © {new Date().getFullYear()}{' '}
+						<a href='#' target='_blank' rel='noopener noreferrer'>
+						YardSignPlus
+						</a>
+						<span className='d-none d-sm-inline-block'>, All rights Reserved</span>
+					</span>
+					<span className='float-md-end d-none d-md-block'>
+						Hand-crafted & Made with
+						<Heart size={14} />
+					</span>
+				</p>
 			</div>
 		</footer>
 	);
