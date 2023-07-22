@@ -10,14 +10,24 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Service\Helper;
+
 
 #[Route('/admin/rolesPerms')]
 class PermissionsController extends AbstractController
 {
+    // TO Call Helper Service
+    private Helper $Helper;
+
+    public function __construct(Helper $Helper)
+    {
+        $this->Helper = $Helper;
+    }
+    
     #[Route('/permissions', name: 'app_admin_permissions_index', methods: ['GET'])]
     public function index(PermissionsRepository $permissionsRepository): Response
     {
-        return $this->render('admin/permissions/index.html.twig', [
+        return $this->render('home/index.html.twig', [
             'permissions' => $permissionsRepository->findAll(),
         ]);
     }
