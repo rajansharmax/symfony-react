@@ -1,24 +1,27 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import menuItems from "./menu/MenuItem";
 
 const Sidebar: React.FC = () => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-  const [isAnimating, setAnimating] = useState(false);
-  
-  
-  const toggleCollapse = () => {
-    setIsCollapsed(!isCollapsed);
-    setAnimating(!isAnimating);
-    setTimeout(() => {
-      setAnimating(false);
-    }, 300);
-  }
+  const [collapsedItems, setCollapsedItems] = useState<{
+    [key: string]: boolean;
+  }>({});
 
-  const menuClasses = `menu-item ${
-    isAnimating ? "menu-item-animating menu-item-closing" : ""
-  }`;
+  const toggleCollapse = (itemId: string) => {
+    setCollapsedItems((prevState) => ({
+      ...prevState,
+      [itemId]: !prevState[itemId],
+    }));
+  };
 
+  const isItemCollapsed = (itemId: string) => collapsedItems[itemId];
+
+  const menuClasses = (itemId: string) => {
+    const isItemCollapsing = collapsedItems[itemId] && !isItemCollapsed(itemId);
+    return `menu-item ${isItemCollapsing ? "menu-item-animating menu-item-closing" : ""
+      }`;
+  };
 
   return (
     <aside
@@ -81,33 +84,34 @@ const Sidebar: React.FC = () => {
       <div className="menu-inner-shadow"></div>
 
       <ul className="menu-inner py-1">
-        <li
-          className={`menu-item ${menuClasses} active ${isCollapsed ? "open" : ""}`}
-          onClick={toggleCollapse}
-        >
-          <Link to="#" className="menu-link menu-toggle">
-            <i className="menu-icon tf-icons ti ti-smart-home"></i>
-            <div data-i18n="Dashboards">Dashboards</div>
-            <div className="badge bg-label-primary rounded-pill ms-auto">3</div>
-          </Link>
-          <ul className="menu-sub">
-            <li className="menu-item active">
-              <a href="index.html" className="menu-link">
-                <div data-i18n="Analytics">Analytics</div>
-              </a>
-            </li>
-            <li className="menu-item">
-              <a href="dashboards-crm.html" className="menu-link">
-                <div data-i18n="CRM">CRM</div>
-              </a>
-            </li>
-            <li className="menu-item">
-              <a href="dashboards-ecommerce.html" className="menu-link">
-                <div data-i18n="eCommerce">eCommerce</div>
-              </a>
-            </li>
-          </ul>
-        </li>
+        {menuItems.map((menuItem) => (
+          <li
+            key={menuItem.id}
+            className={`menu-item ${menuClasses(menuItem.id)} active ${isItemCollapsed(menuItem.id) ? "open" : ""
+              }`}
+            onClick={() => toggleCollapse(menuItem.id)}
+          >
+            <Link to="#" className="menu-link menu-toggle">
+              <i className={`menu-icon tf-icons ti ${menuItem.icon}`}></i>
+              <div data-i18n={menuItem.i18}>{menuItem.label}</div>
+              <div className="badge bg-label-primary rounded-pill ms-auto">
+                {menuItem.subItems.length}
+              </div>
+            </Link>
+            <ul className="menu-sub">
+              {menuItem.subItems.map((subItem) => (
+                <li key={subItem.id} className="menu-item">
+                  <Link
+                    to={`/${menuItem.id}/${subItem.id}`}
+                    className="menu-link"
+                  >
+                    <div>{subItem.label}</div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
       </ul>
     </aside>
   );
