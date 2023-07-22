@@ -7,6 +7,7 @@ import AuthContext from "./store/AuthContext";
 import Home from "./pages/Home"
 import AdminLogin from "./pages/Admin/Login";
 import Dashboard from './pages/Admin/Dashboard'
+import Permissions from "./pages/Admin/Permissions";
 
 const App = () => {
 	const Auth = useContext(AuthContext);
@@ -22,6 +23,7 @@ const App = () => {
 							element={<ProductDetailPage />}
 						/>
 						<Route path="/admin/dashboard" element={<Dashboard />} />
+						<Route path="/admin/rolesPerms/permissions" element={<Permissions />} />
 					</React.Fragment>
 				) : null}
 

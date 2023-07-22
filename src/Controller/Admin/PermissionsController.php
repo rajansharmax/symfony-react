@@ -11,10 +11,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/admin/permissions')]
+#[Route('/admin/rolesPerms')]
 class PermissionsController extends AbstractController
 {
-    #[Route('/', name: 'app_admin_permissions_index', methods: ['GET'])]
+    #[Route('/permissions', name: 'app_admin_permissions_index', methods: ['GET'])]
     public function index(PermissionsRepository $permissionsRepository): Response
     {
         return $this->render('admin/permissions/index.html.twig', [

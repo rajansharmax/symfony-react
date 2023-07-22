@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<title>Permissions index</title>
+
+{% block body %}
+    <h1>Permissions index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>ShortName</th>
+                <th>Status</th>
+                <th>CreatedBy</th>
+                <th>CreatedAt</th>
+                <th>UpdatedAt</th>
+                <th>DeletedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for permission in permissions %}
+            <tr>
+                <td>{{ permission.id }}</td>
+                <td>{{ permission.name }}</td>
+                <td>{{ permission.shortName }}</td>
+                <td>{{ permission.status ? 'Yes' : 'No' }}</td>
+                <td>{{ permission.createdBy ? 'Yes' : 'No' }}</td>
+                <td>{{ permission.createdAt ? permission.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ permission.updatedAt ? permission.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ permission.DeletedAt ? permission.DeletedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_admin_permissions_show', {'id': permission.id}) }}">show</a>
+                    <a href="{{ path('app_admin_permissions_edit', {'id': permission.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_permissions_new') }}">Create new</a>
+{% endblock %}
