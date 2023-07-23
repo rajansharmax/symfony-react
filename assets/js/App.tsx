@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import LoginPage from "./pages/LoginPage";
+import Register from "./pages/Register";
 import { Navigate, Route, Routes } from "react-router-dom";
 import ProductListPage from "./pages/ProductListPage";
 import ProductDetailPage from "./pages/ProducDetailPage";
@@ -30,7 +31,7 @@ const App = () => {
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/admin/login" element={<AdminLogin />} />
 				<Route path="/" element={<Home />} />
-				<Route path="/register" element={<LoginPage />} />
+				<Route path="/register" element={<Register />} />
 
 				<Route path="*" element={<Navigate to="/" replace />} />
 			</Routes>

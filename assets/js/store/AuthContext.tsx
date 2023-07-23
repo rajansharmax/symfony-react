@@ -9,6 +9,7 @@ interface IAutoContext {
 	isLoggedIn: boolean;
 	login: (token: string | null) => void;
 	logout: () => void;
+  	register: (token: string | null) => void;
 }
 
 const AuthContext = React.createContext<IAutoContext>({
@@ -16,6 +17,7 @@ const AuthContext = React.createContext<IAutoContext>({
 	isLoggedIn: false,
 	login: (token: string | null) => {},
 	logout: () => {},
+  	register: (token: string | null) => {},
 });
 
 export const AuthContextProvider = (props: AuthContextProviderProps) => {
@@ -33,11 +35,17 @@ export const AuthContextProvider = (props: AuthContextProviderProps) => {
 		localStorage.removeItem("token");
 	};
 
+	const registerHandler = (token: string | null) => {
+		setToken(token);
+		localStorage.setItem("token", token ?? "");
+	};
+
 	const contextValue = {
 		token: token,
 		isLoggedIn: userIsLoggedIn,
 		login: loginHandler,
 		logout: logoutHandler,
+    	register: registerHandler,
 	};
 
 	return (

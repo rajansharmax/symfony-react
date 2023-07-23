@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import Apple from "../../components/Layouts/Apple";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../../store/AuthContext";
 import { Type } from "typescript";
 
@@ -186,9 +186,9 @@ const Login = () =>{
 
                   <p className="text-center">
                     <span>New on our platform?</span>
-                    <a href="auth-register-basic.html">
+                    <Link to="/register">
                       <span>Create an account</span>
-                    </a>
+                    </Link>
                   </p>
 
                   <div className="divider my-4">
