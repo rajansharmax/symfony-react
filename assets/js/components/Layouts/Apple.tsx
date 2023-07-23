@@ -9,7 +9,7 @@ interface LayoutProps {
 }
 const Apple = (props:LayoutProps) => {
     return (
-        <React.Fragment>
+        <>
             {/* <Header /> */}
                 {/* <!-- Layout wrapper --> */}
                 <div className="layout-wrapper layout-content-navbar">
@@ -36,7 +36,7 @@ const Apple = (props:LayoutProps) => {
                     {/* <!-- Drag Target Area To SlideIn Menu On Small Screens --> */}
                     <div className="drag-target"></div>
                 </div>
-        </React.Fragment>
+        </>
     );
 };
 

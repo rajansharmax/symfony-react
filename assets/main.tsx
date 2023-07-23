@@ -7,7 +7,6 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { AuthContextProvider } from "./js/store/AuthContext";
 
-document.addEventListener("DOMContentLoaded", () => {
 const container = document.getElementById("app");
   if (!container) {
     throw new Error("Target container 'app' not found in the DOM.");
@@ -15,15 +14,15 @@ const container = document.getElementById("app");
 
 const root = createRoot(container!);
 root.render(
-	<AuthContextProvider>
- 		<React.StrictMode>
- 			<BrowserRouter>
- 				<App />
- 			</BrowserRouter>
- 		</React.StrictMode>
- 	</AuthContextProvider>
+  <AuthContextProvider>
+    {/* React.StrictMode is intended to help detect potential issues in your code. However, in production builds, it won't render twice. */}
+    {/* <React.StrictMode> */}
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+    {/* </React.StrictMode> */}
+  </AuthContextProvider>
 );
-});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
