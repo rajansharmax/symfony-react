@@ -62,7 +62,7 @@ const Home = () => {
                         <div className="dropdown-divider"></div>
                       </li>
                       <li>
-                        <Link className="dropdown-item" to={`/admin/login`}>
+                        <Link className="dropdown-item" to={`/superadmin/login`}>
                           <i className="ti ti-user-check me-2 ti-sm"></i>
                           <span className="align-middle">Login</span>
                         </Link>

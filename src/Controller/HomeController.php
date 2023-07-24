@@ -104,6 +104,7 @@ class HomeController extends AbstractController
             );
             $user->setEmail($data['email']);
             $user->setPassword($hashedPassword);
+            // $user->setRoles([User::ROLE_ADMIN]);
 
             $user->setFullName(' ');
             $user->setCreatedAt(new \DateTimeImmutable());
@@ -131,7 +132,7 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('admin/login', name: 'adminLogin')]
+    #[Route('superadmin/login', name: 'adminLogin')]
     public function AdminLogin(): Response
     {
         return $this->render('home/index.html.twig', [

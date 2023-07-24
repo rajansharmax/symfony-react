@@ -29,7 +29,7 @@ const App = () => {
 				) : null}
 
 				<Route path="/login" element={<LoginPage />} />
-				<Route path="/admin/login" element={<AdminLogin />} />
+				<Route path="/superadmin/login" element={<AdminLogin />} />
 				<Route path="/" element={<Home />} />
 				<Route path="/register" element={<Register />} />
 
