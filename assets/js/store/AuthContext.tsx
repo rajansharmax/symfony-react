@@ -1,4 +1,6 @@
 import React, { ReactElement, useState } from "react";
+import axios from "axios";
+
 
 interface AuthContextProviderProps {
 	children: ReactElement;
@@ -33,6 +35,25 @@ export const AuthContextProvider = (props: AuthContextProviderProps) => {
 	const logoutHandler = () => {
 		setToken(null);
 		localStorage.removeItem("token");
+		handleLogout();
+	};
+
+	const handleLogout = async () => {
+		try {
+			const response = await axios.post("/api/logout"); // Send a POST request to the logout endpoint
+			// After successful logout, redirect the user to the home page
+			// Check the status code to determine if the logout was successful
+			if (response.status === 200) {
+				console.log("Logout successful.");
+				// Optionally, you can redirect the user to the home page after logout
+				window.location.href = "/";
+			} else {
+				console.error("Logout failed. Status code:", response.status);
+			}
+			
+		} catch (error) {
+			console.error("Logout failed:", error);
+		}
 	};
 
 	const registerHandler = (token: string | null) => {
