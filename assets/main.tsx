@@ -6,6 +6,8 @@ import App from "./js/App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { AuthContextProvider } from "./js/store/AuthContext";
+import "./app";
+
 
 const container = document.getElementById("app");
   if (!container) {

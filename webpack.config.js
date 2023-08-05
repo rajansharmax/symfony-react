@@ -19,7 +19,8 @@ Encore
   .addEntry("main", "./assets/main.tsx")
   .addStyleEntry('styles', './assets/css/app.scss')
 
-
+  // uncomment this if you want use jQuery in the following example
+  .autoProvidejQuery()
   /*
    * ENTRY CONFIG
    *
@@ -30,6 +31,9 @@ Encore
 
   // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
   .splitEntryChunks()
+
+  // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
+  .enableStimulusBridge('./assets/controllers.json')
 
   // will require an extra script tag for runtime.js
   // but, you probably want this, unless you're building a single-page app

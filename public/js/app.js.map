@@ -1,1 +1,1 @@
-{"version":3,"file":"app.js","sourceRoot":"","sources":["../../assets/app.js"],"names":[],"mappings":"AAAA;;;;;GAKG;AAEH,+EAA+E;AAC/E,OAAO,kBAAkB,CAAC"}
+{"version":3,"file":"app.js","sourceRoot":"","sources":["../../assets/app.tsx"],"names":[],"mappings":"AAAA,OAAO,gBAAgB,CAAC;AACxB;;;;;GAKG;AAEH,+EAA+E;AAC/E,OAAO,kBAAkB,CAAC"}

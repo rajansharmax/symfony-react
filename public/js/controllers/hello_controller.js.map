@@ -1,0 +1,1 @@
+{"version":3,"file":"hello_controller.js","sourceRoot":"","sources":["../../../assets/controllers/hello_controller.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAE,MAAM,oBAAoB,CAAC;AAEhD;;;;;;;;GAQG;AACH,MAAM,CAAC,OAAO,MAAO,SAAQ,UAAU;IACnC,OAAO;QACH,OAAO,CAAC,GAAG,CAAC,GAAG,CAAC,CAAC;QACjB,IAAI,CAAC,OAAO,CAAC,WAAW,GAAG,mEAAmE,CAAC;IACnG,CAAC;CACJ"}
