@@ -20,7 +20,7 @@ Encore
   .addStyleEntry('styles', './assets/css/app.scss')
 
   // uncomment this if you want use jQuery in the following example
-  .autoProvidejQuery()
+  // .autoProvidejQuery()
   /*
    * ENTRY CONFIG
    *
