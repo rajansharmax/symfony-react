@@ -26,7 +26,7 @@ security:
             logout:
                 path: app_logout
             # provider: users_in_memory
-
+            access_denied_handler: App\Security\AccessDeniedHandler
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
 
@@ -41,6 +41,7 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: '^/api', roles: IS_AUTHENTICATED_FULLY }
+        # - { path: '^/superadmin/login', roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
 
