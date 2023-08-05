@@ -1,0 +1,4 @@
+# config/routes/exception.yaml
+no_route_exception:
+    path: /exception/no-route
+    controller: App\Controller\ExceptionController::noRouteException
