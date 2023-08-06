@@ -9,9 +9,12 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Service\Helper;
-
+use Exception;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 #[Route('/admin/rolesPerms')]
 class PermissionsController extends AbstractController
@@ -30,6 +33,25 @@ class PermissionsController extends AbstractController
         return $this->render('home/index.html.twig', [
             'permissions' => $permissionsRepository->findAll(),
         ]);
+    }
+
+    #[Route('/permissions/list', name: 'app_admin_permissions_list', methods: ['GET'])]
+    public function GetList(PermissionsRepository $permissionsRepository): Response
+    {
+        try {
+            $permissions = $permissionsRepository->findAll();
+
+            if (!$permissions) {
+                return $this->json([], Response::HTTP_NO_CONTENT);
+                
+            }
+
+            return $this->json($permissions, Response::HTTP_OK, [], ['groups' => 'default']);
+
+        } catch (Exception $e) {
+            throw new HttpException(Response::HTTP_INTERNAL_SERVER_ERROR, 'An error occurred', $e);
+        }
+        
     }
 
     #[Route('/new', name: 'app_admin_permissions_new', methods: ['GET', 'POST'])]
